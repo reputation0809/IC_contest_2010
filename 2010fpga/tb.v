@@ -73,6 +73,16 @@ module tb();
         .D(rb2_d),
         .Q(rb2_q));
         
+    initial 
+    begin
+    `ifdef FSDB
+      $fsdbDumpfile("SI.fsdb");
+      $fsdbDumpvars;
+    `endif
+
+    
+    end
+    
     initial
     begin
         $readmemh(`INFILE_RB1_ini, m1.CELL);
